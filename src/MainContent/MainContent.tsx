@@ -10,7 +10,7 @@ const ConsultationHeader = ()=>{
 
 /* THIS IS THE PART THAT HANDLE WHATSAPP DEEPLINK */
 function handleStartCall(){
-    const phoneNumber="23479445456";
+    const phoneNumber="2347079445456";
     const message = "Hello, I am ready for my consultation. Please initiate the consultation call.";
     const url = `https://wa.me/${phoneNumber}/?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank")
