@@ -1,5 +1,5 @@
 interface SideBarOption{
-    option_name:String;
+    option_name: string;
     option_function: ()=>void;
 }
 
@@ -15,7 +15,7 @@ const SideBarOption = ({option_name, option_function}:SideBarOption)=>{
     return(
         <>
             <li>
-                <button onClick={option_function}>
+                <button onClick={option_function} className="btn btn-outline-secondary w-100 py-2">
                     {option_name}
                 </button>
             </li>
@@ -42,10 +42,18 @@ const Sidebar = () =>{
 
     return(
         <>
-            <div className="side-bar container-sm">
+            <aside className="col-3 col-lg-2 position-fixed top-0 start-0 vh-100 overflow-auto bg-light p-3">
                 <Logo/>
-                {options_list.map((option) => <SideBarOption option_name={option.option_name} option_function={option.option_function} />)}
-            </div>
+                <ul className="list-unstyled d-grid gap-2 mb-0">
+                    {options_list.map((option) => (
+                        <SideBarOption
+                            key={option.option_name}
+                            option_name={option.option_name}
+                            option_function={option.option_function}
+                        />
+                    ))}
+                </ul>
+            </aside>
         </>
     )
 }
