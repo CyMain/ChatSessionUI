@@ -6,8 +6,10 @@ function App() {
 
   return (
     <>
-      <SideBar/>
-      <MainContent/>
+    <div className="d-flex flex-row">
+        <SideBar/>
+        <MainContent/>
+    </div>
     </>
   )
 }

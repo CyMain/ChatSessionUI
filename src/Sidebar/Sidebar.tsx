@@ -42,7 +42,7 @@ const Sidebar = () =>{
 
     return(
         <>
-            <div className="side-bar">
+            <div className="side-bar container-sm">
                 <Logo/>
                 {options_list.map((option) => <SideBarOption option_name={option.option_name} option_function={option.option_function} />)}
             </div>
