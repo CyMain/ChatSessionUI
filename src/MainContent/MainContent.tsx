@@ -1,16 +1,16 @@
 const ConsultationHeader = ()=>{
     return(
-        <>
-            <h2>
-                Your consultation with Mr. Doe is about to begin.
-            </h2>
-        </>
+        <section className="bg-white rounded-3 shadow-sm border p-4">
+            <p className="text-uppercase text-secondary small fw-semibold mb-2">Upcoming consultation</p>
+            <h2 className="h4 mb-1">Mr. Doe</h2>
+            <p className="text-secondary mb-0">Your consultation is about to begin.</p>
+        </section>
     )
 }
 
 /* THIS IS THE PART THAT HANDLE WHATSAPP DEEPLINK */
 function handleStartCall(){
-    const phoneNumber="2348088311557";
+    const phoneNumber="23479445456";
     const message = "Hello, I am ready for my consultation. Please initiate the consultation call.";
     const url = `https://wa.me/${phoneNumber}/?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank")
@@ -20,8 +20,8 @@ function handleStartCall(){
 const MainBody = ()=>{
     return(
         <>
-            <div className="container-xxl rounded d-flex flex-column align-items-center p-4 gap-4 bg-dark">
-                <ul className="text-light d-flex flex-column gap-2 mb-0 text-start">
+            <section className="container-xxl rounded-3 d-flex flex-column align-items-center p-4 gap-4 bg-body-secondary shadow-sm">
+                <ul className="text-dark text-opacity-75 d-flex flex-column gap-2 mb-0 ps-4 text-start">
                     <li>
                         Welcome to the waiting room.
                     </li>
@@ -44,7 +44,7 @@ const MainBody = ()=>{
                     </svg>
                     Start Consultation
                 </button>
-            </div>
+            </section>
         </>
     )
 }
